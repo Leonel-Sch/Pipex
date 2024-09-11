@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pipex.h                                            :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 14:56:41 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/09/11 20:02:08 by lscheupl         ###   ########.fr       */
+/*   Created: 2024/05/21 17:32:41 by lscheupl          #+#    #+#             */
+/*   Updated: 2024/05/27 14:33:23 by lscheupl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <wait.h>
-# include "Libft2/libft.h"
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	unsigned long	i;
 
-void	ft_parsing(char *cmd1, char *cmd2, char **env);
-
-#endif
+	i = 0;
+	if (dest == NULL && src == NULL && n != 0)
+		return (NULL);
+	while (i < n)
+	{
+		((char *)dest)[i] = ((char *)src)[i];
+		i++;
+	}
+	return (dest);
+}

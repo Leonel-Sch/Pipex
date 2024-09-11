@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pipex.h                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 14:56:41 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/09/11 20:02:08 by lscheupl         ###   ########.fr       */
+/*   Created: 2024/05/21 12:20:20 by lscheupl          #+#    #+#             */
+/*   Updated: 2024/05/27 18:31:51 by lscheupl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <wait.h>
-# include "Libft2/libft.h"
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned char	*temp;
 
-void	ft_parsing(char *cmd1, char *cmd2, char **env);
-
-#endif
+	temp = (unsigned char *)s;
+	while (n > 0)
+	{
+		*temp = 0;
+		temp++;
+		n--;
+	}
+}

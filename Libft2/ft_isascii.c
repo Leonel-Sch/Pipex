@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pipex.h                                            :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 14:56:41 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/09/11 20:02:08 by lscheupl         ###   ########.fr       */
+/*   Created: 2024/05/21 12:22:10 by lscheupl          #+#    #+#             */
+/*   Updated: 2024/05/22 18:33:55 by lscheupl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <wait.h>
-# include "Libft2/libft.h"
-
-void	ft_parsing(char *cmd1, char *cmd2, char **env);
-
-#endif
+int	ft_isascii(int c)
+{
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
+}

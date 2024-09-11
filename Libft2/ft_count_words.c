@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pipex.h                                            :+:      :+:    :+:   */
+/*   ft_count_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 14:56:41 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/09/11 20:02:08 by lscheupl         ###   ########.fr       */
+/*   Created: 2024/08/04 18:08:05 by lscheupl          #+#    #+#             */
+/*   Updated: 2024/08/04 18:08:40 by lscheupl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <wait.h>
-# include "Libft2/libft.h"
+int	ft_count_words(const char *s, char c)
+{
+	int	count;
+	int	i;
 
-void	ft_parsing(char *cmd1, char *cmd2, char **env);
-
-#endif
+	i = 0;
+	count = 0;
+	while (s[i])
+	{
+		if (s[i] != c)
+		{
+			count++;
+			while (s[i] != c || s[i] == '\0')
+			{
+				if (s[i] == '\0')
+					return (count);
+				i++;
+			}
+		}
+		i++;
+	}
+	return (count);
+}

@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pipex.h                                            :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 14:56:41 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/09/11 20:02:08 by lscheupl         ###   ########.fr       */
+/*   Created: 2024/05/29 14:24:09 by lscheupl          #+#    #+#             */
+/*   Updated: 2024/05/30 13:55:55 by lscheupl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <wait.h>
-# include "Libft2/libft.h"
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*list;
 
-void	ft_parsing(char *cmd1, char *cmd2, char **env);
-
-#endif
+	list = (t_list *)malloc(sizeof(t_list));
+	if (list == NULL)
+	{
+		return (list);
+	}
+	list->content = content;
+	list->next = NULL;
+	return (list);
+}

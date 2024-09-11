@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pipex.h                                            :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 14:56:41 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/09/11 20:02:08 by lscheupl         ###   ########.fr       */
+/*   Created: 2024/05/28 21:35:24 by lscheupl          #+#    #+#             */
+/*   Updated: 2024/05/30 13:55:47 by lscheupl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <wait.h>
-# include "Libft2/libft.h"
+t_list	*ft_lstlast(t_list *lst)
+{
+	t_list	*cache;
 
-void	ft_parsing(char *cmd1, char *cmd2, char **env);
-
-#endif
+	while (lst != NULL)
+	{
+		cache = lst->next;
+		if (cache == NULL)
+			return (lst);
+		lst = cache;
+	}
+	return (lst);
+}

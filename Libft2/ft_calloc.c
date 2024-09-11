@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pipex.h                                            :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 14:56:41 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/09/11 20:02:08 by lscheupl         ###   ########.fr       */
+/*   Created: 2024/05/27 12:40:51 by lscheupl          #+#    #+#             */
+/*   Updated: 2024/05/27 16:11:58 by lscheupl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <wait.h>
-# include "Libft2/libft.h"
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	void	*aloc;
 
-void	ft_parsing(char *cmd1, char *cmd2, char **env);
-
-#endif
+	if (nmemb * size < 0 || nmemb * size > 2147483647)
+		return (NULL);
+	aloc = (char *)malloc(sizeof(char) * (size * nmemb));
+	if (!aloc)
+		return (NULL);
+	ft_bzero(aloc, size * nmemb);
+	return (aloc);
+}

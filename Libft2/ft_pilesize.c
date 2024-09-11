@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pipex.h                                            :+:      :+:    :+:   */
+/*   ft_pilesize.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 14:56:41 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/09/11 20:02:08 by lscheupl         ###   ########.fr       */
+/*   Created: 2024/05/28 21:35:34 by lscheupl          #+#    #+#             */
+/*   Updated: 2024/08/30 17:48:05 by lscheupl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <wait.h>
-# include "Libft2/libft.h"
+int	ft_pilesize(t_pile *pile)
+{
+	int	i;
 
-void	ft_parsing(char *cmd1, char *cmd2, char **env);
-
-#endif
+	i = 0;
+	pile = ft_pilefirst(pile);
+	while (pile != NULL)
+	{
+		pile = pile->next;
+		i++;
+	}
+	return (i);
+}

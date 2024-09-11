@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pipex.h                                            :+:      :+:    :+:   */
+/*   ft_pilenew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 14:56:41 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/09/11 20:02:08 by lscheupl         ###   ########.fr       */
+/*   Created: 2024/05/29 14:24:09 by lscheupl          #+#    #+#             */
+/*   Updated: 2024/08/30 16:51:12 by lscheupl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <wait.h>
-# include "Libft2/libft.h"
+t_pile	*ft_pilenew(int content)
+{
+	t_pile	*pile;
 
-void	ft_parsing(char *cmd1, char *cmd2, char **env);
-
-#endif
+	pile = (t_pile *)malloc(sizeof(t_pile));
+	if (pile == NULL)
+	{
+		return (pile);
+	}
+	pile->content = content;
+	pile->next = NULL;
+	pile->prev = NULL;
+	return (pile);
+}

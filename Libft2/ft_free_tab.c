@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pipex.h                                            :+:      :+:    :+:   */
+/*   ft_free_tab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 14:56:41 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/09/11 20:02:08 by lscheupl         ###   ########.fr       */
+/*   Created: 2024/08/06 20:15:12 by lscheupl          #+#    #+#             */
+/*   Updated: 2024/08/06 20:15:50 by lscheupl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <wait.h>
-# include "Libft2/libft.h"
+char	**ft_free_tab(char **tab, int i)
+{
+	int	j;
 
-void	ft_parsing(char *cmd1, char *cmd2, char **env);
-
-#endif
+	j = 0;
+	i = 2;
+	while (tab[j] != NULL)
+	{
+		free(tab[j]);
+		tab[j] = NULL;
+		j++;
+	}
+	free(tab);
+	return (NULL);
+}

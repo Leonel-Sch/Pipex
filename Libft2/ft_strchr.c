@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pipex.h                                            :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 14:56:41 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/09/11 20:02:08 by lscheupl         ###   ########.fr       */
+/*   Created: 2024/05/22 17:55:05 by lscheupl          #+#    #+#             */
+/*   Updated: 2024/05/28 17:46:20 by lscheupl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <wait.h>
-# include "Libft2/libft.h"
+//#include <stdio.h>
 
-void	ft_parsing(char *cmd1, char *cmd2, char **env);
+char	*ft_strchr(const char *s, int c)
+{
+	int				i;
+	unsigned char	cc;
 
-#endif
+	i = 0;
+	cc = (unsigned char)c;
+	while (s[i] != cc && s[i])
+		i++;
+	if (s[i] == cc)
+		return ((char *)&s[i]);
+	return (NULL);
+}
+
+// int main (void)
+//{
+//	char s[] = "lalala";
+//	int c = 97;
+//	printf("%s", ft_strchr(s, c));
+//	return (0);
+//}

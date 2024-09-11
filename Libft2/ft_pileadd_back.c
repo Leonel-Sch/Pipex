@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pipex.h                                            :+:      :+:    :+:   */
+/*   ft_pileadd_back.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 14:56:41 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/09/11 20:02:08 by lscheupl         ###   ########.fr       */
+/*   Created: 2024/05/28 21:35:05 by lscheupl          #+#    #+#             */
+/*   Updated: 2024/08/07 13:32:12 by lscheupl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <wait.h>
-# include "Libft2/libft.h"
+void	ft_pileadd_back(t_pile **pile, t_pile *new)
+{
+	t_pile	*here;
 
-void	ft_parsing(char *cmd1, char *cmd2, char **env);
-
-#endif
+	here = ft_pilelast(*pile);
+	if (pile != NULL)
+	{
+		if (here != NULL)
+		{
+			here->next = new;
+			new->prev = here;
+			new->next = NULL;
+		}
+		else
+			*pile = new;
+	}
+	else
+		*pile = new;
+}

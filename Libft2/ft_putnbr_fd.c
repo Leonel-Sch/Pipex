@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pipex.h                                            :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 14:56:41 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/09/11 20:02:08 by lscheupl         ###   ########.fr       */
+/*   Created: 2024/05/23 08:07:04 by lscheupl          #+#    #+#             */
+/*   Updated: 2024/05/23 09:15:10 by lscheupl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <wait.h>
-# include "Libft2/libft.h"
+void	ft_putnbr_fd(int n, int fd)
+{
+	long	nbr;
 
-void	ft_parsing(char *cmd1, char *cmd2, char **env);
-
-#endif
+	nbr = n;
+	if (nbr < 0)
+	{
+		nbr = -nbr;
+		ft_putchar_fd('-', fd);
+	}
+	if (nbr > 9)
+	{
+		ft_putnbr_fd(nbr / 10, fd);
+		ft_putchar_fd(nbr % 10 + 48, fd);
+	}
+	if (nbr < 10)
+		ft_putchar_fd(nbr + 48, fd);
+}
