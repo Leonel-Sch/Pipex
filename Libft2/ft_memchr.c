@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leonel <leonel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 18:32:59 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/05/27 22:32:59 by lscheupl         ###   ########.fr       */
+/*   Updated: 2024/09/14 15:56:26 by leonel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		i++;
 	}
 	if (s1[i] == cc)
-		return ((void *)&s[i]);
+		return ((void *)s);
 	return (NULL);
 }

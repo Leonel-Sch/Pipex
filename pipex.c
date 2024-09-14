@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pipex.h                                            :+:      :+:    :+:   */
+/*   pipex.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: leonel <leonel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 14:56:41 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/09/14 18:12:26 by leonel           ###   ########.fr       */
+/*   Created: 2024/09/14 17:34:57 by leonel            #+#    #+#             */
+/*   Updated: 2024/09/14 18:49:33 by leonel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "Pipex.h"
 
-# include "Libft2/libft.h"
-# include <unistd.h>
-# include <wait.h>
-
-typedef struct s_pipex
+void	ft_execution(t_pipex *pipex)
 {
-	char	*infile;
-	char	*outfile;
-	char	*cmd1;
-	char	*cmd1args;
-	char	**tabarg1;
-	char	*cmd2;
-	char	*cmd2args;
-	char	**tabarg2;
-}			t_pipex;
+	int fd[2];
+	pid_t pid;
 
-void		ft_parsing(t_pipex *pipex, char **env);
-void	ft_execution(t_pipex *pipex);
+	if (pipe(fd) == -1)
+	{
+		ft_printf("ECHEC");
+	}
 
-#endif
+	pid = fork();
+	if (pid == -1)
+	{
+		ft_printf("ECHEC");
+	}
+
+	if (pid == 0)
+	{
+		close(fd[0]);
+		dup2(fd[1], STDOUT_FILENO);
+		execve(pipex->cmd1, pipex->tabarg1, NULL);
+	}
+}

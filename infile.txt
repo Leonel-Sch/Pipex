@@ -1,0 +1,11 @@
+Libft2
+Main.c
+Makefile
+Parsing.c
+Pipex.h
+infile.txt
+libft.a
+obj
+outfile.txt
+pipex
+pipex.c

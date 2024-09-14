@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leonel <leonel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 13:58:02 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/05/27 18:32:59 by lscheupl         ###   ########.fr       */
+/*   Updated: 2024/09/14 15:55:42 by leonel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 
 static int	ft_size(long nb)
 {
-	int	i;
+	// int	i;
 	int	size;
 
 	size = 1;
-	i = 0;
+	// i = 0;
 	if (nb < 0)
 	{
 		nb = -nb;

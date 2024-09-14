@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leonel <leonel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 18:48:48 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/05/28 17:46:02 by lscheupl         ###   ########.fr       */
+/*   Updated: 2024/09/14 15:55:30 by leonel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <bsd/string.h>
+// #include <bsd/string.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t siz)
 {

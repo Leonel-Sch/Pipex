@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leonel <leonel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:56:14 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/09/12 19:52:35 by lscheupl         ###   ########.fr       */
+/*   Updated: 2024/09/14 18:16:53 by leonel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,31 +27,33 @@ void	ft_clean_path(char **mpath)
 }
 void	ft_clean_args(t_pipex *pipex)
 {
-	int	i;
-	int	j;
+	// int	i;
+	// int	j;
 
-	i = 0;
-	j = 0;
+	// i = 0;
+	// j = 0;
+	// if (pipex->cmd1args != NULL)
+	// {
+	// 	while (pipex->cmd1args[i] != ' ')
+	// 		i++;
+	// 	while (pipex->cmd1args[i])
+	// 		pipex->cmd1args[j++] = pipex->cmd1args[i++];
+	// 	pipex->cmd1args[j] = '\0';
+	// }
+	// i = 0;
+	// j = 0;
+	// if (pipex->cmd2args != NULL)
+	// {
+	// 	while (pipex->cmd2args[i] != ' ')
+	// 		i++;
+	// 	while (pipex->cmd2args[i])
+	// 		pipex->cmd2args[j++] = pipex->cmd2args[i++];
+	// 	pipex->cmd2args[j] = '\0';
+	// }
 	if (pipex->cmd1args != NULL)
-	{
-		while (pipex->cmd1args[i] != ' ')
-			i++;
-		while (pipex->cmd1args[i])
-			pipex->cmd1args[j++] = pipex->cmd1args[i++];
-		pipex->cmd1args[j] = '\0';
-	}
-	i = 0;
-	j = 0;
+		pipex->tabarg1 = ft_split(pipex->cmd1args, ' ');
 	if (pipex->cmd2args != NULL)
-	{
-		while (pipex->cmd2args[i] != ' ')
-			i++;
-		while (pipex->cmd2args[i])
-			pipex->cmd2args[j++] = pipex->cmd2args[i++];
-		pipex->cmd2args[j] = '\0';
-	}
-	pipex->tabarg1 = ft_split(pipex->cmd1args, ' ');
-	pipex->tabarg2 = ft_split(pipex->cmd2args, ' ');
+		pipex->tabarg2 = ft_split(pipex->cmd2args, ' ');
 }
 
 void	ft_isolate_cmd_args(t_pipex *pipex)
@@ -112,12 +114,12 @@ char	**ft_path(char **env)
 	char	*path;
 	char	**mpath;
 	int		i;
-	int		j;
+	// int		j;
 
 	path = NULL;
 	mpath = NULL;
 	i = 0;
-	j = 0;
+	// j = 0;
 	while (env[i])
 	{
 		if (env[i][0] == 'P' && env[i][1] == 'A' && env[i][2] == 'T'
