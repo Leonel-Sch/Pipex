@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leonel <leonel@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:56:20 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/09/14 17:34:41 by leonel           ###   ########.fr       */
+/*   Updated: 2024/09/15 15:43:56 by lscheupl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,10 @@ int	main(int argc, char **argv, char **env)
 {
 	t_pipex	pipex;
 
-	if (argc <= 2)
+	if (argc != 5)
 	{
-		ft_printf("Not Enough Arguments\n");
-		return (0);
+		ft_putstr_fd("Wrong Number of Arguments", 2);
+		return (1);
 	}
 	ft_initialize_data(&pipex, argv);
 	ft_parsing(&pipex, env);

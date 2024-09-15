@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leonel <leonel@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:56:41 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/09/15 12:23:10 by leonel           ###   ########.fr       */
+/*   Updated: 2024/09/15 15:34:15 by lscheupl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "Libft2/libft.h"
 # include <unistd.h>
 # include <wait.h>
+#include <fcntl.h>
 
 typedef struct s_pipex
 {

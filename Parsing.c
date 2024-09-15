@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leonel <leonel@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:56:14 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/09/15 12:27:35 by leonel           ###   ########.fr       */
+/*   Updated: 2024/09/15 18:27:45 by lscheupl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,10 @@ void	ft_isolate_cmd_args(t_pipex *pipex)
 	int	i;
 
 	i = 0;
+	pipex->cmd1args = ft_strdup(pipex->cmd1);
+	pipex->cmd2args = ft_strdup(pipex->cmd2);
 	if (ft_strchr(pipex->cmd1, ' '))
 	{
-		pipex->cmd1args = ft_strdup(pipex->cmd1);
 		while (pipex->cmd1[i] != ' ')
 			i++;
 		while (pipex->cmd1[i])
@@ -75,7 +76,6 @@ void	ft_isolate_cmd_args(t_pipex *pipex)
 	i = 0;
 	if (ft_strchr(pipex->cmd2, ' '))
 	{
-		pipex->cmd2args = ft_strdup(pipex->cmd2);
 		while (pipex->cmd2[i] != ' ')
 			i++;
 		while (pipex->cmd2[i])

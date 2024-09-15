@@ -1,11 +1,15 @@
-Libft2
-Main.c
-Makefile
-Parsing.c
-Pipex.h
-infile.txt
-libft.a
-obj
-outfile.txt
-pipex
-pipex.c
+ffje hf
+fdsd
+f 
+dsf dsfd 
+fdsdf 
+ds 
+fdsd 
+dsfd 
+sdds
+ fdsdd
+ ds ds
+ fdsdf 
+ fsd fdfds  
+ y
+ 
