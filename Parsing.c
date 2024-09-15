@@ -6,7 +6,7 @@
 /*   By: leonel <leonel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:56:14 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/09/14 18:16:53 by leonel           ###   ########.fr       */
+/*   Updated: 2024/09/15 12:27:35 by leonel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@ void	ft_clean_args(t_pipex *pipex)
 	// 		pipex->cmd2args[j++] = pipex->cmd2args[i++];
 	// 	pipex->cmd2args[j] = '\0';
 	// }
+	//ft_print_everything(pipex);
+	//printf("cmd1args : %s\n", pipex->cmd1args);
+	//printf("cmd2args : %s\n", pipex->cmd2args);
 	if (pipex->cmd1args != NULL)
 		pipex->tabarg1 = ft_split(pipex->cmd1args, ' ');
 	if (pipex->cmd2args != NULL)
