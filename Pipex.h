@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leonel <leonel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:56:41 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/09/15 15:34:15 by lscheupl         ###   ########.fr       */
+/*   Updated: 2024/09/15 23:12:15 by leonel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_pipex
 	char	**tabarg2;
 }			t_pipex;
 
-void		ft_parsing(t_pipex *pipex, char **env);
+void	ft_parsing(t_pipex *pipex, char **env);
 void	ft_execution(t_pipex *pipex);
 void	ft_print_everything(t_pipex *pipex);
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lscheupl <lscheupl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leonel <leonel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:56:20 by lscheupl          #+#    #+#             */
-/*   Updated: 2024/09/15 15:43:56 by lscheupl         ###   ########.fr       */
+/*   Updated: 2024/09/16 00:13:57 by leonel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,20 @@ int	main(int argc, char **argv, char **env)
 
 	if (argc != 5)
 	{
-		ft_putstr_fd("Wrong Number of Arguments", 2);
+		ft_putstr_fd("Wrong Number of Arguments\n", 2);
 		return (1);
 	}
 	ft_initialize_data(&pipex, argv);
 	ft_parsing(&pipex, env);
 	ft_print_everything(&pipex);
 	ft_execution(&pipex);
+	free(pipex.cmd1args);
+	free(pipex.cmd2args);
+	if (access(pipex.cmd1, X_OK) == 0)
+		free(pipex.cmd1);
+	if (access(pipex.cmd2, X_OK) == 0)
+		free(pipex.cmd2);
+	ft_free_tab(pipex.tabarg1, 0);
+	ft_free_tab(pipex.tabarg2, 0);
 	return (0);
 }
